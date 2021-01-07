@@ -5,7 +5,7 @@
 **This Service is written with Django 2.0.7.**
 
 ## Email Services Used
-* Gmail ( Please ensure that, the gmail accound is in less secure mode)
+* Gmail ( Please ensure that, the gmail account is in less secure mode)
 * SendGrid 
 
 ## Building
