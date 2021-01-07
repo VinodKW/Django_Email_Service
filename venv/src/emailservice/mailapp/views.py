@@ -27,9 +27,9 @@ def sendmail(request):
        
             return render(
                 request, 
-                'email.html', 
+                'success.html', 
                 {
-                    'title':'Send an Email'
+                        'title':'Success'
                 }
             )
 
@@ -46,7 +46,7 @@ def sendmail(request):
                 # Sending the mail with an alternative mail Service, in our case its Gmail.
                 with get_connection(
                     host=settings.EMAIL_HOST_GMAIL, 
-                    port=587, 
+                    port=settings.EMAIL_PORT, 
                     username=settings.EMAIL_HOST_USER_GMAIL, 
                     password=settings.EMAIL_HOST_PASSWORD_GMAIL, 
                     use_tls=True
@@ -60,14 +60,21 @@ def sendmail(request):
                 
                 return render(
                     request, 
-                    'email.html', 
+                    'success.html', 
                     {
-                        'title':'Send an Email'
+                        'title':'Success'
                     }
                 )
 
             except SMTPException as e:
                 print("Both the Services are down", e)
+                return render(
+                    request, 
+                    'error.html', 
+                    {
+                        'title':'Error'
+                    }
+                )
     
     
     # If the request is not of type POST, we are render the following template. 

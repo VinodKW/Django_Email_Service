@@ -18,5 +18,5 @@ from django.urls import path
 from mailapp.views import sendmail; 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('send/', sendmail, name="email")
+    path('', sendmail, name="email")
 ]
