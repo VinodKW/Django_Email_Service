@@ -116,11 +116,16 @@ USE_TZ = True
 
 # Mail Sending Variables
 
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "<EMAIL ID>"
-EMAIL_HOST_PASSWORD = "<PASSWORD>"
+EMAIL_HOST_USER = "<SENDGRID USER>"
+EMAIL_HOST_PASSWORD = "<SENDGRIP PASSWORD>"
+
+EMAIL_HOST_GMAIL = "smtp.gmail.com"
+EMAIL_HOST_USER_GMAIL = "<GMAIL USER>"
+EMAIL_HOST_PASSWORD_GMAIL = "<GMAIL PASSWORD>"
+
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
